@@ -64,5 +64,10 @@ async function sendMessage(to, text) {
   });
 }
 
+const path = require('path');
+
+// Serve landing page
+app.use(express.static(path.join(__dirname, 'public')));
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Bot jalan di port ${PORT}`));
